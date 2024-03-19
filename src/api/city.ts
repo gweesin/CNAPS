@@ -45,7 +45,7 @@ async function getAllCitiesByNetwork(): Promise<GansuDetailCity[]> {
 }
 
 async function getAllCitiesByLocal(): Promise<GansuDetailCity[]> {
-  return await fse.readJSON('src/assets/cities.json')
+  return await fse.readJSON('assets/cities.json')
 }
 
 export async function getCities(local?: boolean): Promise<GansuDetailCity[]> {
