@@ -38,7 +38,7 @@
   "scripts": {
     "build": "unbuild",
     "dev": "unbuild --stub",
-    "lint": "eslint .",
+    "lint": "eslint . --no-warn-ignored",
     "prepublishOnly": "nr build",
     "release": "bumpp && npm publish",
     "start": "esno src/index.ts",
@@ -46,10 +46,19 @@
     "typecheck": "tsc --noEmit",
     "prepare": "simple-git-hooks"
   },
+  "dependencies": {
+    "async": "^3.2.5",
+    "axios": "^1.6.8",
+    "axios-retry": "^4.0.0",
+    "fs-extra": "^11.2.0",
+    "pino": "^8.19.0"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^2.8.3",
     "@antfu/ni": "^0.21.12",
     "@antfu/utils": "^0.7.7",
+    "@types/async": "^3.2.24",
+    "@types/fs-extra": "^11.0.4",
     "@types/node": "^20.11.29",
     "bumpp": "^9.4.0",
     "eslint": "^8.57.0",
