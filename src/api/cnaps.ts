@@ -79,5 +79,7 @@ export async function getCnapsList(): Promise<GansuDetailCnaps[]> {
     GansuDetailCnaps[],
     GansuDetailCnaps[][]
   >(promiseFnList, MAX_CONCURRENCY)
-  return cnapsMatrix.flatMap(cnaps => cnaps)
+  return cnapsMatrix
+    .flatMap(cnaps => cnaps)
+    .sort((a, b) => a.BankCode.localeCompare(b.BankCode))
 }
