@@ -1,6 +1,6 @@
 import type { AxiosResponse } from 'axios'
-import axios from 'axios'
 import type { GansuRSP, GansuResponseModel } from './gansu.api'
+import http from './http'
 
 export interface GansuBank {
   BankId: string
@@ -9,6 +9,6 @@ export interface GansuBank {
 
 export async function getBanks(): Promise<GansuBank[]> {
   const response: AxiosResponse<GansuResponseModel<GansuRSP<GansuBank[]>>>
-    = await axios.post(`/per/trans/queryAPSBank.do?t=${Date.now()}`)
+    = await http.post(`/per/trans/queryAPSBank.do?t=${Date.now()}`)
   return response.data.RSP.List
 }

@@ -1,9 +1,9 @@
 import type { AxiosResponse } from 'axios'
-import axios from 'axios'
 import fse from 'fs-extra'
 import async from 'async'
 import { MAX_CONCURRENCY } from '../constants'
 import type { GansuRSP, GansuResponseModel } from './gansu.api'
+import http from './http'
 
 interface GansuProvince {
   ProvinceCode: string
@@ -19,14 +19,14 @@ export interface GansuDetailCity extends GansuCity, GansuProvince {}
 
 async function queryProvinces(): Promise<GansuProvince[]> {
   const response: AxiosResponse<GansuResponseModel<GansuRSP<GansuProvince[]>>>
-    = await axios.post(`/per/trans/queryProvince.do?t=${Date.now()}`)
+    = await http.post(`/per/trans/queryProvince.do?t=${Date.now()}`)
 
   return response.data.RSP.List
 }
 
 async function queryCity(provinceCode: string): Promise<GansuCity[]> {
   const response: AxiosResponse<GansuResponseModel<GansuRSP<GansuCity[]>>>
-    = await axios.post(`/per/trans/queryCity.do?t=${Date.now()}`, {
+    = await http.post(`/per/trans/queryCity.do?t=${Date.now()}`, {
       ProvinceCode: provinceCode,
     })
 

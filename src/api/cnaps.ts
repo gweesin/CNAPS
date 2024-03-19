@@ -1,5 +1,4 @@
 import type { AxiosResponse } from 'axios'
-import axios from 'axios'
 import async from 'async'
 import logger from '../logger'
 import { MAX_CONCURRENCY } from '../constants'
@@ -8,6 +7,7 @@ import { getCities } from './city'
 import type { GansuRSP, GansuResponseModel } from './gansu.api'
 import type { GansuBank } from './gansuBank'
 import { getBanks } from './gansuBank'
+import http from './http'
 
 export interface GansuCnaps {
   LName: string
@@ -28,7 +28,7 @@ export interface QueryAccBankParam {
 async function queryAccBank(params: QueryAccBankParam): Promise<GansuCnaps[]> {
   try {
     const response: AxiosResponse<GansuResponseModel<GansuRSP<GansuCnaps[]>>>
-      = await axios.post(`/per/trans/queryAccBank.do?t=${Date.now()}`, {
+      = await http.post(`/per/trans/queryAccBank.do?t=${Date.now()}`, {
         BankName: params.bankName,
         CityCode: params.cityCode,
         PayeeBankId: params.bankId,
