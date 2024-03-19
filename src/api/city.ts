@@ -1,6 +1,8 @@
 import type { AxiosResponse } from 'axios'
 import axios from 'axios'
 import fse from 'fs-extra'
+import async from 'async'
+import { MAX_CONCURRENCY } from '../constants'
 import type { GansuRSP, GansuResponseModel } from './gansu.api'
 
 interface GansuProvince {
@@ -34,14 +36,24 @@ async function queryCity(provinceCode: string): Promise<GansuCity[]> {
 async function getAllCitiesByNetwork(): Promise<GansuDetailCity[]> {
   const provinces: GansuProvince[] = await queryProvinces()
 
-  const detailCities: GansuDetailCity[] = []
-
+  const promiseFnList: Array<(callback: Function) => void> = []
   for (const province of provinces) {
-    const cities = await queryCity(province.ProvinceCode)
-    detailCities.push(...cities.map(city => Object.assign(city, province)))
+    promiseFnList.push((callback) => {
+      queryCity(province.ProvinceCode).then((cities) => {
+        callback(
+          null,
+          cities.map(city => Object.assign(city, province)),
+        )
+      })
+    })
   }
 
-  return detailCities
+  const detailMatrix: GansuDetailCity[][] = await async.parallelLimit<
+    GansuDetailCity[],
+    GansuDetailCity[][]
+  >(promiseFnList, MAX_CONCURRENCY)
+
+  return detailMatrix.flatMap(detailCity => detailCity)
 }
 
 async function getAllCitiesByLocal(): Promise<GansuDetailCity[]> {
@@ -49,5 +61,13 @@ async function getAllCitiesByLocal(): Promise<GansuDetailCity[]> {
 }
 
 export async function getCities(local?: boolean): Promise<GansuDetailCity[]> {
-  return local ? getAllCitiesByLocal() : getAllCitiesByNetwork()
+  const cities = local
+    ? await getAllCitiesByLocal()
+    : await getAllCitiesByNetwork()
+  return cities.sort((a, b) => {
+    if (a.ProvinceCode === b.ProvinceCode)
+      return a.CityCode.localeCompare(b.CityCode)
+
+    return a.ProvinceCode.localeCompare(b.ProvinceCode)
+  })
 }

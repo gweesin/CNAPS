@@ -2,6 +2,7 @@ import type { AxiosResponse } from 'axios'
 import axios from 'axios'
 import async from 'async'
 import logger from '../logger'
+import { MAX_CONCURRENCY } from '../constants'
 import type { GansuDetailCity } from './city'
 import { getCities } from './city'
 import type { GansuRSP, GansuResponseModel } from './gansu.api'
@@ -74,9 +75,9 @@ export async function getCnapsList(): Promise<GansuDetailCnaps[]> {
     }
   }
 
-  const result = await async.parallelLimit<
+  const cnapsMatrix = await async.parallelLimit<
     GansuDetailCnaps[],
     GansuDetailCnaps[][]
-  >(promiseFnList, 50)
-  return result.flatMap(cnaps => cnaps)
+  >(promiseFnList, MAX_CONCURRENCY)
+  return cnapsMatrix.flatMap(cnaps => cnaps)
 }
