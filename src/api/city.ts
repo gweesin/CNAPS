@@ -10,7 +10,7 @@ interface GansuProvince {
   ProvinceName: string
 }
 
-interface GansuCity {
+export interface GansuCity {
   CityCode: string
   CityName: string
 }
