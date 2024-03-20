@@ -1,0 +1,92 @@
+[
+  {
+    "BankName": "中国工商银行",
+    "outerBankCode": "102100099996",
+    "innerBankCode": "0300"
+  },
+  {
+    "BankName": "中国农业银行",
+    "outerBankCode": "103100000026",
+    "innerBankCode": "0400"
+  },
+  {
+    "BankName": "中国银行",
+    "outerBankCode": "104100000004",
+    "innerBankCode": "0600"
+  },
+  {
+    "BankName": "中国建设银行",
+    "outerBankCode": "105100000017",
+    "innerBankCode": "0200"
+  },
+  {
+    "BankName": "中国交通银行",
+    "outerBankCode": "301290000007",
+    "innerBankCode": "0500"
+  },
+  {
+    "BankName": "中信银行",
+    "outerBankCode": "302100011000",
+    "innerBankCode": "1400"
+  },
+  {
+    "BankName": "光大银行",
+    "outerBankCode": "303100000006",
+    "innerBankCode": "0700"
+  },
+  {
+    "BankName": "华夏银行",
+    "outerBankCode": "304100040000",
+    "innerBankCode": "1500"
+  },
+  {
+    "BankName": "民生银行",
+    "outerBankCode": "305100000013",
+    "innerBankCode": "0900"
+  },
+  {
+    "BankName": "广发银行",
+    "outerBankCode": "306581000003",
+    "innerBankCode": "1100"
+  },
+  {
+    "BankName": "平安银行(原深圳发展银行)",
+    "outerBankCode": "307584007998",
+    "innerBankCode": "1300"
+  },
+  {
+    "BankName": "招商银行",
+    "outerBankCode": "308584000013",
+    "innerBankCode": "0800"
+  },
+  {
+    "BankName": "兴业银行",
+    "outerBankCode": "309391000011",
+    "innerBankCode": "1000"
+  },
+  {
+    "BankName": "上海浦东发展银行",
+    "outerBankCode": "310290000013",
+    "innerBankCode": "1200"
+  },
+  {
+    "BankName": "恒丰银行",
+    "outerBankCode": "315456000105",
+    "innerBankCode": "4800"
+  },
+  {
+    "BankName": "浙商银行",
+    "outerBankCode": "316331000018",
+    "innerBankCode": "5016"
+  },
+  {
+    "BankName": "渤海银行",
+    "outerBankCode": "318110000014",
+    "innerBankCode": "5027"
+  },
+  {
+    "BankName": "中国邮储银行",
+    "outerBankCode": "403100000004",
+    "innerBankCode": "3200"
+  }
+]
