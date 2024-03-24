@@ -75,11 +75,8 @@ jobs:
       - name: Install
         run: nci
 
-      - name: Build
-        run: nr build
-
-      - name: Test
-        run: nr test
+      - name: Start
+        run: nr start
 
       - name: Check for Changes
         id: check_changes
