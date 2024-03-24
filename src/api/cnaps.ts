@@ -70,7 +70,8 @@ export async function getCnapsList(): Promise<GansuDetailCnaps[]> {
   logger.info('start query cnaps')
   logger.info(`banks: ${banks.map(bank => bank.BankName)}`)
   logger.info(`cities: ${cities.map(city => city.CityName)}`)
-  for (const bank of banks) {
+  for (let idx = 0; idx < banks.length; ++idx) {
+    const bank = banks[idx]
     for (const city of cities) {
       promiseFnList.push((callback) => {
         queryReallyAccBank(bank, city).then(value => callback(null, value))
@@ -79,7 +80,7 @@ export async function getCnapsList(): Promise<GansuDetailCnaps[]> {
             callback(null, [])
           }).finally(() => {
             if (city === lastCity)
-              logger.info(`bank: ${bank.BankName} done`)
+              logger.info(`progress: ${idx + 1}/${banks.length}, bank: ${bank.BankName} done`)
           })
       })
     }
