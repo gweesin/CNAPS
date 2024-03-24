@@ -52,7 +52,7 @@ async function queryReallyAccBank(
     bankName: bank.BankName,
   })
 
-  logger.debug(
+  logger.info(
     `bank: ${bank.BankName}, city: ${city.CityName}, cnaps: ${cnapsList.length}`,
   )
   // console.log(
