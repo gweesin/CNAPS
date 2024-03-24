@@ -1,4 +1,4 @@
-name: CI
+name: Update CNAPS Data
 
 on:
   schedule:
