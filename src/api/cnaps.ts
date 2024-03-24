@@ -17,7 +17,8 @@ export interface GansuCnaps {
 export interface GansuDetailCnaps
   extends GansuCnaps,
   GansuDetailCity,
-  GansuBank {}
+  GansuBank {
+}
 
 export interface QueryAccBankParam {
   bankId: string
@@ -28,11 +29,11 @@ export interface QueryAccBankParam {
 async function queryAccBank(params: QueryAccBankParam): Promise<GansuCnaps[]> {
   try {
     const response: AxiosResponse<GansuResponseModel<GansuRSP<GansuCnaps[]>>>
-      = await http.post(`/per/trans/queryAccBank.do?t=${Date.now()}`, {
-        BankName: params.bankName,
-        CityCode: params.cityCode,
-        PayeeBankId: params.bankId,
-      })
+            = await http.post(`/per/trans/queryAccBank.do?t=${Date.now()}`, {
+              BankName: params.bankName,
+              CityCode: params.cityCode,
+              PayeeBankId: params.bankId,
+            })
 
     return response.data.RSP?.List || []
   }
@@ -52,12 +53,9 @@ async function queryReallyAccBank(
     bankName: bank.BankName,
   })
 
-  logger.info(
-    `bank: ${bank.BankName}, city: ${city.CityName}, cnaps: ${cnapsList.length}`,
+  logger.debug(
+        `bank: ${bank.BankName}, city: ${city.CityName}, cnaps: ${cnapsList.length}`,
   )
-  // console.log(
-  //   `bank: ${bank.BankName}, city: ${city.CityName}, cnaps: ${cnapsList.length}`
-  // );
   return cnapsList.map(cnaps => Object.assign(cnaps, bank, city))
 }
 
@@ -67,18 +65,33 @@ export async function getCnapsList(): Promise<GansuDetailCnaps[]> {
 
   const promiseFnList: Array<(callback: Function) => void> = []
 
+  const lastCity = cities[cities.length - 1]
+
+  logger.info('start query cnaps')
+  logger.info(`banks: ${banks.map(bank => bank.BankName)}`)
+  logger.info(`cities: ${cities.map(city => city.CityName)}`)
   for (const bank of banks) {
     for (const city of cities) {
       promiseFnList.push((callback) => {
         queryReallyAccBank(bank, city).then(value => callback(null, value))
+          .catch((e) => {
+            logger.error(e)
+            callback(null, [])
+          }).finally(() => {
+            if (city === lastCity)
+              logger.info(`bank: ${bank.BankName} done`)
+          })
       })
     }
   }
 
   const cnapsMatrix = await async.parallelLimit<
-    GansuDetailCnaps[],
-    GansuDetailCnaps[][]
-  >(promiseFnList, MAX_CONCURRENCY)
+        GansuDetailCnaps[],
+        GansuDetailCnaps[][]
+    >(promiseFnList, MAX_CONCURRENCY)
+
+  logger.info('query cnaps done')
+
   return cnapsMatrix
     .flatMap(cnaps => cnaps)
     .sort((a, b) => a.BankCode.localeCompare(b.BankCode))
