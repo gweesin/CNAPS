@@ -1,12 +1,17 @@
 # CNAPS
 
 [//]: # ([![npm version][npm-version-src]][npm-version-href])
+
 [//]: # ([![npm downloads][npm-downloads-src]][npm-downloads-href])
+
 [//]: # ([![bundle][bundle-src]][bundle-href])
+
 [//]: # ([![JSDocs][jsdocs-src]][jsdocs-href])
 [![License][license-src]][license-href]
 
 This repository pertains to CNAPS data, encompassing extensive payment and bank union numbers within China.
+
+The data will be stored in [assets/cnaps.json](./assets/cnaps.json) will be updated regularly
 
 > **Note**:
 > The CNAPS is utilized for large-scale fund transfers to uniquely identify banks, like the SWIFT code. It is a 12-digit
