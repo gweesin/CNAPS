@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "packageManager": "pnpm@9.5.0",
   "description": "CNAPS 大额支付号、联行号数据",
-  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "author": "Gweesin<gweesin2000@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/gweesin/CNAPS#readme",
   "repository": {
