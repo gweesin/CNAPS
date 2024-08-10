@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "packageManager": "pnpm@9.7.0",
   "description": "CNAPS 大额支付号、联行号数据",
-  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "author": "gweesin<gweesin2000@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/gweesin/CNAPS#readme",
   "repository": {
@@ -56,14 +56,14 @@
     "pino": "^9.3.2"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.24.1",
-    "@antfu/ni": "^0.22.0",
+    "@antfu/eslint-config": "^2.25.0",
+    "@antfu/ni": "^0.22.1",
     "@antfu/utils": "^0.7.10",
     "@types/async": "^3.2.24",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^22.1.0",
+    "@types/node": "^22.2.0",
     "bumpp": "^9.4.2",
-    "eslint": "^9.8.0",
+    "eslint": "^9.9.0",
     "esno": "^4.7.0",
     "lint-staged": "^15.2.8",
     "pnpm": "^9.7.0",

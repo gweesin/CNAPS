@@ -17,6 +17,8 @@ The data will be stored in [assets/cnaps.json](./assets/cnaps.json) will be upda
 > The CNAPS is utilized for large-scale fund transfers to uniquely identify banks, like the SWIFT code. It is a 12-digit
 > number that is used to identify the bank and branch of the account holder.
 
+see [assets/cnaps.csv](./assets/cnaps.csv) and [assets/cnaps.json](./assets/cnaps.json) for more details.
+
 ## Sponsors
 
 <p align="center">
