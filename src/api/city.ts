@@ -36,15 +36,15 @@ async function queryCity(provinceCode: string): Promise<GansuCity[]> {
 async function getAllCitiesByNetwork(): Promise<GansuDetailCity[]> {
   const provinces: GansuProvince[] = await queryProvinces()
 
+  // eslint-disable-next-line ts/no-unsafe-function-type
   const promiseFnList: Array<(callback: Function) => void> = []
   for (const province of provinces) {
-    promiseFnList.push((callback) => {
-      queryCity(province.ProvinceCode).then((cities) => {
-        callback(
-          null,
-          cities.map(city => Object.assign(city, province)),
-        )
-      })
+    promiseFnList.push(async (callback) => {
+      const cities = await queryCity(province.ProvinceCode)
+      callback(
+        null,
+        cities.map(city => Object.assign(city, province)),
+      )
     })
   }
 

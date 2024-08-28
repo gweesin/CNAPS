@@ -54,7 +54,7 @@ async function queryReallyAccBank(
   })
 
   logger.debug(
-        `bank: ${bank.BankName}, city: ${city.CityName}, cnaps: ${cnapsList.length}`,
+    `bank: ${bank.BankName}, city: ${city.CityName}, cnaps: ${cnapsList.length}`,
   )
   return cnapsList.map(cnaps => Object.assign(cnaps, bank, city))
 }
@@ -63,6 +63,7 @@ export async function getCnapsList(): Promise<GansuDetailCnaps[]> {
   const banks = await getBanks()
   const cities = await getCities(true)
 
+  // eslint-disable-next-line ts/no-unsafe-function-type
   const promiseFnList: Array<(callback: Function) => void> = []
 
   const lastCity = cities[cities.length - 1]
@@ -87,9 +88,9 @@ export async function getCnapsList(): Promise<GansuDetailCnaps[]> {
   }
 
   const cnapsMatrix = await async.parallelLimit<
-        GansuDetailCnaps[],
-        GansuDetailCnaps[][]
-    >(promiseFnList, MAX_CONCURRENCY)
+    GansuDetailCnaps[],
+    GansuDetailCnaps[][]
+  >(promiseFnList, MAX_CONCURRENCY)
 
   logger.info('query cnaps done')
 
