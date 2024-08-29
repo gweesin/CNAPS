@@ -1,7 +1,11 @@
-import { describe, expect, it } from 'vitest'
+import { expect, it } from 'vitest'
+import { createPatch } from 'diff'
+// @ts-expect-error eslint-disable-next-line ts/ban-ts-comment
+import before from './fixtures/before.csv?raw'
+// @ts-expect-error eslint-disable-next-line ts/ban-ts-comment
+import after from './fixtures/after.csv?raw'
 
-describe('should', () => {
-  it('exported', () => {
-    expect(1).toEqual(1)
-  })
+it('expect version diff', async () => {
+  const result = createPatch('version.diff', before, after)
+  await expect(result).toMatchFileSnapshot('__snapshots__/version.diff')
 })
