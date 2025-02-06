@@ -1,5 +1,5 @@
-import fse from 'fs-extra'
 import type { GansuDetailCnaps } from './api/cnaps'
+import fse from 'fs-extra'
 import { getCnapsList } from './api/cnaps';
 
 (async function iife() {

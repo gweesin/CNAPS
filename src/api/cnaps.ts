@@ -1,11 +1,11 @@
 import type { AxiosResponse } from 'axios'
-import async from 'async'
-import logger from '../logger'
-import { MAX_CONCURRENCY } from '../constants'
 import type { GansuDetailCity } from './city'
-import { getCities } from './city'
-import type { GansuRSP, GansuResponseModel } from './gansu.api'
+import type { GansuResponseModel, GansuRSP } from './gansu.api'
 import type { GansuBank } from './gansuBank'
+import async from 'async'
+import { MAX_CONCURRENCY } from '../constants'
+import logger from '../logger'
+import { getCities } from './city'
 import { getBanks } from './gansuBank'
 import http from './http'
 
@@ -75,14 +75,13 @@ export async function getCnapsList(): Promise<GansuDetailCnaps[]> {
     const bank = banks[idx]
     for (const city of cities) {
       promiseFnList.push((callback) => {
-        queryReallyAccBank(bank, city).then(value => callback(null, value))
-          .catch((e) => {
-            logger.error(e)
-            callback(null, [])
-          }).finally(() => {
-            if (city === lastCity)
-              logger.info(`progress: ${idx + 1}/${banks.length}, bank: ${bank.BankName} done`)
-          })
+        queryReallyAccBank(bank, city).then(value => callback(null, value)).catch((e) => {
+          logger.error(e)
+          callback(null, [])
+        }).finally(() => {
+          if (city === lastCity)
+            logger.info(`progress: ${idx + 1}/${banks.length}, bank: ${bank.BankName} done`)
+        })
       })
     }
   }

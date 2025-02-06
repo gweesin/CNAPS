@@ -1,5 +1,5 @@
 import type { AxiosResponse } from 'axios'
-import type { GansuRSP, GansuResponseModel } from './gansu.api'
+import type { GansuResponseModel, GansuRSP } from './gansu.api'
 import http from './http'
 
 export interface GansuBank {

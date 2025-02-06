@@ -1,8 +1,8 @@
 import type { AxiosResponse } from 'axios'
-import fse from 'fs-extra'
+import type { GansuResponseModel, GansuRSP } from './gansu.api'
 import async from 'async'
+import fse from 'fs-extra'
 import { MAX_CONCURRENCY } from '../constants'
-import type { GansuRSP, GansuResponseModel } from './gansu.api'
 import http from './http'
 
 interface GansuProvince {
