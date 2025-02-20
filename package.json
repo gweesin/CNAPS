@@ -57,25 +57,25 @@
     "pino": "^9.6.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.1.1",
+    "@antfu/eslint-config": "^4.3.0",
     "@antfu/ni": "^23.3.1",
-    "@antfu/utils": "^8.1.0",
+    "@antfu/utils": "^8.1.1",
     "@types/async": "^3.2.24",
     "@types/diff": "^7.0.1",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^22.13.1",
-    "bumpp": "^10.0.2",
-    "eslint": "^9.19.0",
+    "@types/node": "^22.13.4",
+    "bumpp": "^10.0.3",
+    "eslint": "^9.20.1",
     "esno": "^4.8.0",
     "fast-glob": "^3.3.3",
     "lint-staged": "^15.4.3",
-    "pnpm": "^10.2.1",
+    "pnpm": "^10.4.1",
     "rimraf": "^6.0.1",
     "simple-git-hooks": "^2.11.1",
     "typescript": "^5.7.3",
     "unbuild": "^3.3.1",
-    "vite": "^6.1.0",
-    "vitest": "^3.0.5"
+    "vite": "^6.1.1",
+    "vitest": "^3.0.6"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
