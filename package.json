@@ -42,7 +42,8 @@
     "prepublishOnly": "nr build",
     "release": "bumpp && npm publish",
     "prestart": "esno scripts/check-charset.ts",
-    "start": "esno src/index.ts",
+    "start": "esno scripts/generate/index.ts",
+    "generate": "esno scripts/generate/index.ts",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "prepare": "simple-git-hooks"
