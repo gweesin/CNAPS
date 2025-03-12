@@ -9,6 +9,8 @@
 [//]: # ([![JSDocs][jsdocs-src]][jsdocs-href])
 [![License][license-src]][license-href]
 
+**A datasets repo for https://huggingface.co/datasets/gweesin/CNAPS**
+
 This repository pertains to CNAPS data, encompassing extensive payment and bank union numbers within China.
 
 The data will be stored in [assets/cnaps.json](./assets/cnaps.json) will be updated regularly
