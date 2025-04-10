@@ -1,56 +1,40 @@
 # CNAPS
 
-[//]: # ([![npm version][npm-version-src]][npm-version-href])
-
-[//]: # ([![npm downloads][npm-downloads-src]][npm-downloads-href])
-
-[//]: # ([![bundle][bundle-src]][bundle-href])
-
-[//]: # ([![JSDocs][jsdocs-src]][jsdocs-href])
 [![License][license-src]][license-href]
 
-**A datasets repo for https://huggingface.co/datasets/gweesin/CNAPS**
+[English](./README.md) | [中文](./README.zh-CN.md)
 
-This repository pertains to CNAPS data, encompassing extensive payment and bank union numbers within China.
+**A tool for crawling and maintaining China's CNAPS (China National Advanced Payment System) codes dataset.**
 
-The data will be stored in [assets/cnaps.json](./assets/cnaps.json) will be updated regularly
+## Introduction
+
+CNAPS (China National Advanced Payment System) is China's large-value payment system that handles interbank transfers. This project provides a crawler tool to obtain the latest CNAPS codes for Chinese financial institutions, along with a regularly updated dataset.
+
+## Motivation
+
+Financial applications often require valid bank identification codes for transaction processing. CNAPS codes change over time as banks merge, close, or new ones emerge. This project aims to provide an up-to-date, easily accessible dataset of CNAPS codes for developers working with Chinese financial systems.
+
+## Features
+
+- Automated crawler for obtaining the latest CNAPS codes
+- Regularly updated dataset in both JSON and CSV formats
+- Comprehensive coverage of Chinese financial institutions
+
+## Dataset
+
+The dataset is stored in two formats:
+- [assets/cnaps.json](./assets/cnaps.json) - JSON format for programmatic access
+- [assets/cnaps.csv](./assets/cnaps.csv) - CSV format for easy viewing and spreadsheet import
 
 > **Note**:
-> The CNAPS is utilized for large-scale fund transfers to uniquely identify banks, like the SWIFT code. It is a 12-digit
-> number that is used to identify the bank and branch of the account holder.
+> CNAPS codes are 12-digit numbers used to uniquely identify banks and branches in China, similar to how SWIFT codes function internationally.
 
-see [assets/cnaps.csv](./assets/cnaps.csv) and [assets/cnaps.json](./assets/cnaps.json) for more details.
+## Usage
 
-## Sponsors
+You can directly access the dataset files in this repository, or use the crawler tool to obtain the latest data.
 
-<p align="center">
-  <a href="https://cdn.jsdelivr.net/gh/gweesin/static/sponsors.svg">
-    <img src='https://cdn.jsdelivr.net/gh/gweesin/static/sponsors.svg'/>
-  </a>
-</p>
+or using from https://huggingface.co/datasets/gweesin/CNAPS
 
 ## License
 
 [MIT](./LICENSE) License © 2023-PRESENT [Gweesin](https://github.com/gweesin)
-
-<!-- Badges -->
-
-[npm-version-src]: https://img.shields.io/npm/v/CNAPS?style=flat&colorA=080f12&colorB=1fa669
-
-[npm-version-href]: https://npmjs.com/package/CNAPS
-
-[npm-downloads-src]: https://img.shields.io/npm/dm/CNAPS?style=flat&colorA=080f12&colorB=1fa669
-
-[npm-downloads-href]: https://npmjs.com/package/CNAPS
-
-[bundle-src]: https://img.shields.io/bundlephobia/minzip/CNAPS?style=flat&colorA=080f12&colorB=1fa669&label=minzip
-
-[bundle-href]: https://bundlephobia.com/result?p=CNAPS
-
-[license-src]: https://img.shields.io/github/license/gweesin/CNAPS.svg?style=flat&colorA=080f12&colorB=1fa669
-
-[license-href]: https://github.com/gweesin/CNAPS/blob/main/LICENSE
-
-[jsdocs-src]: https://img.shields.io/badge/jsdocs-reference-080f12?style=flat&colorA=080f12&colorB=1fa669
-
-[jsdocs-href]: https://www.jsdocs.io/package/CNAPS
