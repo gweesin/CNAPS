@@ -33,7 +33,7 @@
     }
   },
   "files": [
-    "dist"
+    "assets"
   ],
   "scripts": {
     "build": "unbuild",
