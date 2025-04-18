@@ -1,0 +1,26 @@
+[
+  {
+    "bankCode": "102331005059",
+    "changeType": "modify",
+    "newValue": {
+      "BankCode": "102331005059",
+      "BankId": "102100099996",
+      "BankName": "中国工商银行",
+      "CityCode": "3310",
+      "CityName": "杭州市",
+      "LName": "中国工商银行杭州经济技术开发区支行",
+      "ProvinceCode": "33",
+      "ProvinceName": "浙江省",
+    },
+    "oldValue": {
+      "BankCode": "102331005059",
+      "BankId": "102100099996",
+      "BankName": "中国工商银行",
+      "CityCode": "3310",
+      "CityName": "杭州市",
+      "LName": "中国工商银行股份有限公司杭州钱塘支行",
+      "ProvinceCode": "33",
+      "ProvinceName": "浙江省",
+    },
+  },
+]

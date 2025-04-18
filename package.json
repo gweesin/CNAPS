@@ -44,7 +44,7 @@
     "prestart": "esno scripts/check-charset.ts",
     "start": "esno scripts/generate/index.ts",
     "generate": "esno scripts/generate/index.ts",
-    "test": "vitest",
+    "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "prepare": "simple-git-hooks"
   },

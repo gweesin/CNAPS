@@ -1,0 +1,27 @@
+[
+  {
+    "bankCode": "BankCode",
+    "changeType": "modify",
+    "newValue": {
+      "BankCode": "BankCode",
+      "BankId": "BankId",
+      "BankName": "BankName",
+      "CityCode": "CityCode",
+      "CityName": "CityName",
+      "LName": "LName",
+      "ProvinceCode": "ProvinceCode
+中国工商银行股份有限公司杭州钱塘支行",
+      "ProvinceName": "ProvinceName",
+    },
+    "oldValue": {
+      "BankCode": "BankCode",
+      "BankId": "BankId",
+      "BankName": "BankName",
+      "CityCode": "CityCode",
+      "CityName": "CityName",
+      "LName": "LName",
+      "ProvinceCode": "ProvinceCode",
+      "ProvinceName": "ProvinceName",
+    },
+  },
+]
