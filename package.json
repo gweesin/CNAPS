@@ -40,6 +40,7 @@
     "dev": "unbuild --stub",
     "lint": "eslint . --no-warn-ignored",
     "prepublishOnly": "nr build",
+    "commit": "esno scripts/commit.ts",
     "release": "bumpp && npm publish",
     "prestart": "esno scripts/check-charset.ts",
     "start": "esno scripts/generate/index.ts",

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { checkDiff } from '../scripts/diff'
+import { checkDiff } from '../src/diff'
 
 const header = `LName,BankCode,BankName,BankId,CityCode,CityName,ProvinceName,ProvinceCode`
 const lineOne = `中国工商银行股份有限公司杭州钱塘支行,102331005059,中国工商银行,102100099996,3310,杭州市,浙江省,33`

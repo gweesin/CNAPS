@@ -1,4 +1,4 @@
-import type { GansuDetailCnaps } from '../generate/api/cnaps'
+import type { GansuDetailCnaps } from '../../scripts/generate/api/cnaps'
 import { diffLines } from 'diff'
 
 export type ChangeType = 'modify' | 'add' | 'remove'
