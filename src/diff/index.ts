@@ -62,15 +62,15 @@ export function checkDiffMessages(oldStr: string, newStr: string) {
   // eslint-disable-next-line array-callback-return
   return diffs.map((change) => {
     if (change.changeType === 'modify') {
-      return `“${change.oldValue?.LName}” 更名为 “${change.newValue?.LName}”`
+      return `“${change.oldValue!.LName}” 更名为 “${change.newValue!.LName}”`
     }
 
     if (change.changeType === 'add') {
-      return `新增 “${change.newValue?.LName}”`
+      return `新增 “${change.newValue!.LName}(BankCode=${change.newValue!.BankCode}, BankName=${change.newValue!.BankName}, CityName=${change.newValue!.CityName}, ProvinceName=${change.newValue!.ProvinceName})”`
     }
 
     if (change.changeType === 'remove') {
-      return `移除 “${change.oldValue?.LName}”`
+      return `移除 “${change.oldValue!.LName}(BankCode=${change.oldValue!.BankCode}, BankName=${change.oldValue!.BankName}, CityName=${change.oldValue!.CityName}, ProvinceName=${change.oldValue!.ProvinceName})”`
     }
   })
 }
