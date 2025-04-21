@@ -14,9 +14,13 @@
 
 CNAPS (China National Advanced Payment System) is China's large-value payment system that handles interbank transfers. This project provides a crawler tool to obtain the latest CNAPS codes for Chinese financial institutions, along with a regularly updated dataset.
 
+Financial applications often require valid bank identification codes for transaction processing. CNAPS codes change over time as banks merge, close, or new ones emerge. This project aims to provide an up-to-date, easily accessible dataset of CNAPS codes for developers working with Chinese financial systems.
+
 ## Motivation
 
-Financial applications often require valid bank identification codes for transaction processing. CNAPS codes change over time as banks merge, close, or new ones emerge. This project aims to provide an up-to-date, easily accessible dataset of CNAPS codes for developers working with Chinese financial systems.
+Online resources for querying CNAPS codes, such as [联行号查询](https://www.lianhanghao.com/), [联行号查询API接口](https://www.cwjyz.com.cn/bank/api_intro.html), and [浙商银行联行号查询](https://corbank.czbank.com/CORPORBANK/query_unionBank_index.jsp), often require following public accounts, logging in for paid access, or have frequent CAPTCHA restrictions, making them inconvenient to use.
+
+Faced with these issues, this project was created to provide a solution without the need for login, CAPTCHA, or other restrictions. The data is synchronized daily to ensure timeliness.
 
 ## Features
 
