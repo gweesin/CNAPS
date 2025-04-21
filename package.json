@@ -1,83 +1,14 @@
 {
-  "name": "cnaps",
+  "name": "@cnaps/workspace",
   "type": "module",
-  "version": "0.0.2",
-  "packageManager": "pnpm@10.2.1",
-  "description": "CNAPS 大额支付号、联行号数据",
-  "author": "gweesin<gweesin2000@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/gweesin/CNAPS#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gweesin/CNAPS.git"
-  },
-  "bugs": "https://github.com/gweesin/CNAPS/issues",
-  "keywords": [],
-  "sideEffects": false,
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    }
-  },
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./dist/*",
-        "./dist/index.d.ts"
-      ]
-    }
-  },
-  "files": [
-    "assets"
-  ],
+  "private": true,
   "scripts": {
-    "build": "unbuild",
-    "dev": "unbuild --stub",
     "lint": "eslint . --no-warn-ignored",
-    "prepublishOnly": "nr build",
-    "commit": "esno scripts/commit.ts",
-    "release": "bumpp && npm publish",
-    "prestart": "esno scripts/check-charset.ts",
-    "start": "esno scripts/generate/index.ts",
-    "generate": "esno scripts/generate/index.ts",
-    "test": "vitest run",
-    "typecheck": "tsc --noEmit",
     "prepare": "simple-git-hooks"
-  },
-  "dependencies": {
-    "async": "^3.2.6",
-    "axios": "^1.8.4",
-    "axios-retry": "^4.5.0",
-    "diff": "^7.0.0",
-    "execa": "^9.5.2",
-    "fs-extra": "^11.3.0",
-    "pino": "^9.6.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.12.0",
-    "@antfu/ni": "^24.3.0",
-    "@antfu/utils": "^9.2.0",
-    "@types/async": "^3.2.24",
-    "@types/diff": "^7.0.2",
-    "@types/fs-extra": "^11.0.4",
-    "@types/node": "^22.14.1",
-    "bumpp": "^10.1.0",
-    "eslint": "^9.24.0",
-    "esno": "^4.8.0",
-    "fast-glob": "^3.3.3",
-    "lint-staged": "^15.5.1",
-    "pnpm": "^10.8.1",
-    "rimraf": "^6.0.1",
-    "simple-git-hooks": "^2.12.1",
-    "typescript": "^5.8.3",
-    "unbuild": "^3.5.0",
-    "vite": "^6.3.2",
-    "vitest": "^3.1.1"
+    "@antfu/ni": "^24.3.0"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"

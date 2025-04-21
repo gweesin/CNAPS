@@ -1,6 +1,6 @@
 import { readFile } from 'node:fs/promises'
 import { execa } from 'execa'
-import { checkDiffMessages } from '../src/diff';
+import { checkDiffMessages } from './diff';
 
 (async function iife() {
   const after = await readFile('./assets/cnaps.csv', 'utf-8')
