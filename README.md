@@ -27,8 +27,8 @@ Financial applications often require valid bank identification codes for transac
 ## Dataset
 
 The dataset is stored in two formats:
-- [assets/cnaps.json](./assets/cnaps.json) - JSON format for programmatic access
-- [assets/cnaps.csv](./assets/cnaps.csv) - CSV format for easy viewing and spreadsheet import
+- [assets/cnaps.json](packages/core/assets/cnaps.json) - JSON format for programmatic access
+- [assets/cnaps.csv](packages/core/assets/cnaps.csv) - CSV format for easy viewing and spreadsheet import
 
 > **Note**:
 > CNAPS codes are 12-digit numbers used to uniquely identify banks and branches in China, similar to how SWIFT codes function internationally.

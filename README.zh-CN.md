@@ -27,8 +27,8 @@ CNAPS (China National Advanced Payment System，中国现代化支付系统) 是
 ## 数据集
 
 数据集以两种格式存储：
-- [assets/cnaps.json](./assets/cnaps.json) - JSON格式，便于程序访问
-- [assets/cnaps.csv](./assets/cnaps.csv) - CSV格式，便于查看和导入电子表格
+- [assets/cnaps.json](packages/core/assets/cnaps.json) - JSON格式，便于程序访问
+- [assets/cnaps.csv](packages/core/assets/cnaps.csv) - CSV格式，便于查看和导入电子表格
 
 > **注意**：
 > CNAPS代码是12位数字，用于唯一标识中国的银行和分支机构，类似于国际上使用的SWIFT代码。
