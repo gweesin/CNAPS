@@ -9,3 +9,7 @@ lib-cov
 logs
 node_modules
 temp
+
+**/.vitepress/cache/
+**/auto-imports.d.ts
+**/components.d.ts

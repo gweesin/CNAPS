@@ -1,0 +1,21 @@
+{
+  "name": "@cnaps/docs",
+  "private": true,
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "dependencies": {
+    "cnaps": "workspace:*",
+    "element-plus": "^2.9.8",
+    "vue": "^3.5.13",
+    "vue-virtual-scroller": "2.0.0-beta.8"
+  },
+  "devDependencies": {
+    "unplugin-auto-import": "^19.1.2",
+    "unplugin-element-plus": "^0.9.1",
+    "unplugin-vue-components": "^28.5.0",
+    "vitepress": "^1.6.3"
+  }
+}

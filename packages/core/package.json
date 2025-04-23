@@ -19,7 +19,8 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
-    }
+    },
+    "./assets/*": "./assets/*"
   },
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
@@ -33,7 +34,8 @@
     }
   },
   "files": [
-    "assets"
+    "assets",
+    "src"
   ],
   "scripts": {
     "build": "unbuild",
@@ -61,17 +63,7 @@
     "@types/async": "^3.2.24",
     "@types/diff": "^7.0.2",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^22.14.1",
     "bumpp": "^10.1.0",
-    "eslint": "^9.24.0",
-    "esno": "^4.8.0",
-    "fast-glob": "^3.3.3",
-    "lint-staged": "^15.5.1",
-    "pnpm": "^10.8.1",
-    "rimraf": "^6.0.1",
-    "simple-git-hooks": "^2.12.1",
-    "typescript": "^5.8.3",
-    "unbuild": "^3.5.0",
     "vite": "^6.3.2",
     "vitest": "^3.1.1"
   }
