@@ -19,6 +19,9 @@ export default defineConfig({
     ],
   },
   vite: {
+    ssr: {
+      noExternal: ['element-plus'],
+    },
     plugins: [
       AutoImport({
         resolvers: [ElementPlusResolver()],

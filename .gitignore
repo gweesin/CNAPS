@@ -13,3 +13,4 @@ temp
 **/.vitepress/cache/
 **/auto-imports.d.ts
 **/components.d.ts
+**/.temp
