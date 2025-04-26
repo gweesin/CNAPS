@@ -2,6 +2,7 @@
   "name": "@cnaps/workspace",
   "type": "module",
   "private": true,
+  "packageManager": "pnpm@10.2.1",
   "scripts": {
     "lint": "eslint . --no-warn-ignored",
     "prepare": "simple-git-hooks",
