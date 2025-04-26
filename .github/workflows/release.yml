@@ -23,5 +23,6 @@ jobs:
           registry-url: https://registry.npmjs.org/
 
       - run: pnpm dlx changelogithub
+        working-directory: packages/core
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
