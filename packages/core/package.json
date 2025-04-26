@@ -1,7 +1,7 @@
 {
   "name": "cnaps",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "packageManager": "pnpm@10.2.1",
   "description": "CNAPS 大额支付号、联行号数据",
   "author": "gweesin<gweesin2000@gmail.com>",
