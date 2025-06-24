@@ -6,6 +6,10 @@
   "author": "gweesin<gweesin2000@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/gweesin/CNAPS#readme",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gweesin/CNAPS.git"
