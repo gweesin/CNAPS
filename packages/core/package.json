@@ -1,7 +1,7 @@
 {
   "name": "cnaps",
   "type": "module",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "description": "CNAPS 大额支付号、联行号数据",
   "author": "gweesin<gweesin2000@gmail.com>",
   "license": "MIT",
