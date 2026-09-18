@@ -41,7 +41,7 @@ The dataset is stored in two formats:
 
 You can directly access the dataset files in this repository, or use the crawler tool to obtain the latest data.
 
-or using from https://huggingface.co/datasets/gweesin/CNAPS
+or use it from https://huggingface.co/datasets/gweesin/CNAPS
 
 ## License
 
